@@ -1,23 +1,34 @@
-# Shortcuts
+﻿# Shortcuts - Latest Development Versions
 
-Place the following `.shortcut` files in this directory:
+This folder contains shortcuts using hyphenated naming for repository
+convention. These are the working development files.
 
-1. `log-nutrition.shortcut` - Main logging interface
-2. `nutrition-summary.shortcut` - Statistics display
-3. `edit-recent-entry.shortcut` - Edit incomplete entries
-4. `get-entries.shortcut` - Helper: Query entries
-5. `calculate-stats.shortcut` - Helper: Calculate statistics
+## Files
 
-## Exporting from iPhone
+| File | Description |
+|------|-------------|
+| log-nutrition.shortcut | Main logging interface |
+| nutrition-summary.shortcut | Statistics display |
+| edit-recent-entry.shortcut | Edit incomplete entries |
+| get-entries.shortcut | Helper: Query entries |
+| calculate-stats.shortcut | Helper: Calculate statistics |
 
-1. Open Shortcuts app
-2. Long press each shortcut
-3. Tap "Share"
-4. Save to Files or AirDrop to computer
-5. Place in this directory
+## Important
 
-## Importing to iPhone
+These files use hyphenated names for repository consistency.
+For importing to iPhone, use the files in the release/ folder
+which have the correct iOS shortcut names.
 
-1. Transfer `.shortcut` files to iPhone
-2. Tap each file
-3. Tap "Add Shortcut"
+## Exporting Updated Shortcuts
+
+When you update shortcuts and need to save new versions:
+
+1. Export from iPhone via Share â†’ Save to Files
+2. Save to this folder (latest/)
+3. Also copy to release/ with correct names:
+   - log-nutrition.shortcut â†’ Log Nutrition.shortcut
+   - nutrition-summary.shortcut â†’ Nutrition Summary.shortcut
+   - edit-recent-entry.shortcut â†’ Edit Recent Entry.shortcut
+   - get-entries.shortcut â†’ Nutrition Get Entries.shortcut
+   - calculate-stats.shortcut â†’ Nutrition Calculate Stats.shortcut
+4. Commit both folders to Git

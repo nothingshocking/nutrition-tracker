@@ -1,71 +1,92 @@
-# Nutrition Tracker for Endurance Sports
+﻿# Nutrition Tracker for Endurance Sports
 
-A voice-activated nutrition tracking system built on iOS Shortcuts, designed for endurance athletes who need hands-free logging and real-time statistics during long training sessions and events.
+A voice-activated nutrition tracking system built on iOS Shortcuts,
+designed for endurance athletes who need hands-free logging and
+real-time statistics during long training sessions and events.
 
 ## Overview
 
-Track nutrition intake during cycling, running, triathlon, ultramarathon, or any endurance activity without breaking focus. Voice commands enable logging while moving, with real-time summaries to monitor fueling strategy.
+Track nutrition intake during cycling, running, triathlon,
+ultramarathon, or any endurance activity without breaking focus.
+Voice commands enable logging while moving, with real-time
+summaries to monitor fueling strategy.
 
-### Key Features
+## Key Features
 
-- **Voice-Activated Logging** - Log items hands-free via Siri
-- **Backdated Entries** - Record items consumed minutes or hours ago
-- **Real-Time Statistics** - Check calories/hour and carbs/hour mid-activity
-- **Edit Incomplete Entries** - Update items where nutrition info was unknown
-- **Session Tracking** - Automatic grouping of entries by date/time
-- **Performance Optimized** - Efficient queries even with thousands of entries
+- Voice-Activated Logging - Log items hands-free via Siri
+- Backdated Entries - Record items consumed minutes ago
+- Real-Time Statistics - Check calories/hr and carbs/hr mid-activity
+- Edit Incomplete Entries - Update items where values were unknown
+- Session Tracking - Automatic grouping of entries by date/time
+- Performance Optimized - Efficient queries with thousands of entries
 
 ## Quick Start
+
+See [docs/quick-start.md](docs/quick-start.md) for 10-minute setup.
+
+## Installation
 
 ### Prerequisites
 
 - iPhone with iOS 26.0 or later
-- [Data Jar](https://apps.apple.com/app/data-jar/id1453273600) app (free)
-- iCloud enabled (recommended for data sync)
+- Data Jar app (free from App Store)
+- iCloud enabled (recommended)
 
-### Installation
+### Download Shortcuts
 
-1. **Install Data Jar** from the App Store
+Download all 5 files from shortcuts/release/:
 
-2. **Import Shortcuts**
-   - Download all `.shortcut` files from [shortcuts/latest/](shortcuts/latest/)
-   - Open each file on your iPhone
-   - Tap "Add Shortcut" to import
+1. Log Nutrition.shortcut
+2. Nutrition Summary.shortcut
+3. Edit Recent Entry.shortcut
+4. Nutrition Get Entries.shortcut
+5. Nutrition Calculate Stats.shortcut
 
-3. **Set Up Siri Commands** (Recommended)
-   - Open each shortcut in Shortcuts app
-   - Long press → Details
-   - Add to Siri with your preferred phrase:
-     - "Log food" → Log Nutrition
-     - "Fuel check" → Nutrition Summary
+IMPORTANT: Use shortcuts/release/ files (not shortcuts/latest/)
 
-4. **Test the System**
-   - Say "Hey Siri, log food"
-   - Log a test entry
-   - Say "Hey Siri, fuel check"
-   - Verify it shows your test entry
+### Import to iPhone
 
-See [docs/installation.md](docs/installation.md) for detailed setup instructions.
+1. Tap each .shortcut file
+2. Tap "Add Shortcut"
+3. Verify all 5 appear in Shortcuts app
+
+### Critical: Verify Helper Names
+
+After importing, check these exact names in Shortcuts app:
+
+| Shortcut | Required Name |
+|----------|---------------|
+| Helper 1 | Nutrition: Get Entries |
+| Helper 2 | Nutrition: Calculate Stats |
+
+Note the colon after "Nutrition" - this is required.
+
+If missing, long press â†’ Rename â†’ add the colon.
+
+### Set Up Siri
+
+- "Log food" â†’ Log Nutrition
+- "Fuel check" â†’ Nutrition Summary
+
+See [docs/installation.md](docs/installation.md) for full details.
 
 ## Usage
 
-### Logging Nutrition
+### Log Nutrition
 
-**Voice Command:** "Hey Siri, log food"
+"Hey Siri, log food"
 
-1. Speak the item name when prompted
-2. Enter calories (or 0 if unknown)
-3. Enter carbs in grams (or 0 if unknown)
-4. Choose timing: "Just now" or "Earlier"
+1. Speak item name
+2. Enter calories (0 if unknown)
+3. Enter carbs in grams (0 if unknown)
+4. Choose timing (Just now / Earlier)
 5. Confirm to save
 
-### Checking Statistics
+### Check Statistics
 
-**Voice Command:** "Hey Siri, fuel check"
+"Hey Siri, fuel check"
 
-Enter the number of hours to look back (e.g., 3 for last 3 hours).
-
-**Output Example:**
+Enter hours to review. Output example:
 ```
 Last 3 hours:
 
@@ -76,77 +97,64 @@ Carbs: 95g (32g/hr)
 Items without data: 1
 ```
 
-### Editing Incomplete Entries
+### Edit Incomplete Entries
 
 1. Open Shortcuts app
 2. Run "Edit Recent Entry"
-3. Select the item from the list
-4. Enter correct calories and carbs
-5. Entry is updated in your history
+3. Select item
+4. Enter correct values
+
+## Repository Structure
+```
+nutrition-tracker/
+â”œâ”€â”€ shortcuts/
+â”‚   â”œâ”€â”€ latest/     <- Development files (hyphenated names)
+â”‚   â””â”€â”€ release/    <- Import-ready files (correct iOS names)
+â”œâ”€â”€ docs/
+â”‚   â”œâ”€â”€ quick-start.md
+â”‚   â”œâ”€â”€ user-guide.md
+â”‚   â”œâ”€â”€ installation.md
+â”‚   â”œâ”€â”€ architecture.md
+â”‚   â””â”€â”€ logic/      <- Pseudocode for each shortcut
+â””â”€â”€ tests/
+    â”œâ”€â”€ test-plan.md
+    â””â”€â”€ field-test-template.md
+```
 
 ## Documentation
 
-- [Quick Start Guide](docs/quick-start.md) - Get running in 10 minutes
-- [User Guide](docs/user-guide.md) - Comprehensive usage instructions
-- [Installation Guide](docs/installation.md) - Detailed setup
-- [Architecture](docs/architecture.md) - System design and technical details
-- [Test Plan](tests/test-plan.md) - Testing strategy and results
-
-## System Architecture
-
-### Components
-
-**User-Facing Shortcuts:**
-- Log Nutrition - Create new nutrition entry
-- Nutrition Summary - Display statistics for a time window
-- Edit Recent Entry - Update entries with missing data
-
-**Helper Shortcuts:**
-- Nutrition: Get Entries - Retrieve entries within time range
-- Nutrition: Calculate Stats - Compute totals and averages
-
-### Data Structure
-
-Entries stored in Data Jar using hierarchical date-based keys for efficient querying.
-
-See [docs/architecture.md](docs/architecture.md) for complete technical details.
+- [Quick Start](docs/quick-start.md)
+- [User Guide](docs/user-guide.md)
+- [Installation](docs/installation.md)
+- [Architecture](docs/architecture.md)
 
 ## Roadmap
 
-**v1.0** ✅ (Current)
-- Core logging and summary features
+**v1.0** (Current)
+- Core logging and summary
 - Voice activation
 - Edit functionality
 - Performance optimization
 
 **v1.1** (Planned)
-- Quick Log menu for common items
-- CSV export for analysis
-- Automated backup to iCloud Drive
+- Quick Log menu
+- CSV export
+- Automated backup
 
 **v2.0** (Future)
-- Apple Watch companion app
-- Integration with training platforms
+- Apple Watch support
+- Training platform integration
 - Predictive alerts
-- Advanced analytics
 
 ## Contributing
 
-Feedback and contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-To report issues or suggest features, please use GitHub Issues.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
 MIT License - See [LICENSE](LICENSE) for details.
 
-## Support
-
-- [User Guide](docs/user-guide.md) for detailed instructions
-- [Troubleshooting](docs/user-guide.md#troubleshooting) for common issues
-- GitHub Issues for bugs and feature requests
-
----
+## Version
 
 **Version:** 1.0.0  
 **Last Updated:** February 16, 2026  
