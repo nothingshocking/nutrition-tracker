@@ -153,3 +153,14 @@ Solution: Normal - system creates key automatically
 **Version:** 1.0.0  
 **Last Updated:** February 16, 2026  
 **iOS Requirement:** 26.0+
+
+
+## Note on Downloaded Filenames
+
+When downloading shortcuts from GitHub releases, filenames will
+show periods instead of spaces (e.g., Log.Nutrition.shortcut).
+This is normal GitHub behavior.
+
+Once imported to iPhone, the shortcut will have the correct name
+with spaces (e.g., Log Nutrition). The filename does not affect
+the imported shortcut name.
