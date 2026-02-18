@@ -19,7 +19,7 @@ Use this template to document real-world testing sessions.
 
 **Conditions:**
 - Weather: [ ] Clear [ ] Rain [ ] Wind [ ] Cold [ ] Hot
-- Temperature: _____Â°F
+- Temperature: _____ degreesF
 - Terrain: [ ] Flat [ ] Hilly [ ] Mountainous
 
 ## System Configuration

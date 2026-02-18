@@ -50,30 +50,30 @@ ACTION: Choose from Menu
   Options: "Just now" / "Earlier"
 
 OPTION 1: "Just now"
-  Current Date â†’ Entry Time
+  Current Date ->' Entry Time
 
 OPTION 2: "Earlier"
   Ask for Input: Minutes ago
-  Current Date - Minutes â†’ Entry Time
+  Current Date - Minutes ->' Entry Time
 ```
 
 ### Step 5: Generate Session ID
 ```
-Format Date: Entry Time â†’ yyyyMMdd_HHmm
+Format Date: Entry Time ->' yyyyMMdd_HHmm
 Text: "session_" + Formatted Date
 Set Variable: Session ID
 ```
 
 ### Step 6: Generate Data Key
 ```
-Format Date: Entry Time â†’ yyyy_MM_dd
+Format Date: Entry Time ->' yyyy_MM_dd
 Text: "nutrition_" + Formatted Date
 Set Variable: Data Key
 ```
 
 ### Step 7: Format Display Time
 ```
-Format Date: Entry Time â†’ HH:mm
+Format Date: Entry Time ->' HH:mm
 ```
 
 ### Step 8: Build Confirmation Text
@@ -93,8 +93,8 @@ Get Value (Data Jar): Data Key
   If value does not exist: Empty List
 
 If Value does not have any value
-  THEN: List (empty) â†’ Existing Entries
-  OTHERWISE: Value â†’ Existing Entries
+  THEN: List (empty) ->' Existing Entries
+  OTHERWISE: Value ->' Existing Entries
 ```
 
 ### Step 11: Create Entry Dictionary

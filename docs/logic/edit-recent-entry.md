@@ -28,9 +28,9 @@ OUTPUT: Shortcut Result (Last 72 hours)
 Initialize: All Recent Entries (empty list)
 
 Query Today:
-  Format Date: Now â†’ yyyy_MM_dd
+  Format Date: Now ->' yyyy_MM_dd
   Text: "nutrition_[date]"
-  Get Value: If does not exist â†’ Empty List
+  Get Value: If does not exist ->' Empty List
   Add all to All Recent Entries
 
 Query Yesterday:
@@ -99,7 +99,7 @@ OUTPUT: Entry to Edit
 ### Step 12: Remember Entry's Date Key
 ```
 Get timestamp from Entry to Edit
-Format Date â†’ yyyy_MM_dd
+Format Date ->' yyyy_MM_dd
 Text: "nutrition_[date]"
 Set Variable: Entry Date Key
 ```
@@ -107,9 +107,9 @@ Set Variable: Entry Date Key
 ### Step 13: Extract Current Values
 ```
 Get from Entry to Edit:
-  - item â†’ Current Item
-  - calories â†’ Current Calories
-  - carbs â†’ Current Carbs
+  - item ->' Current Item
+  - calories ->' Current Calories
+  - carbs ->' Current Carbs
 ```
 
 ### Step 14: Show Current Values

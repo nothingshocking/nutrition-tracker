@@ -112,7 +112,7 @@ Items without data: 1
 **Commands:**
 - LOG: "Hey Siri, log food"
 - CHECK: "Hey Siri, fuel check"  
-- EDIT: Shortcuts app â†’ "Edit Recent Entry"
+- EDIT: Shortcuts app ->' "Edit Recent Entry"
 
 **Target Rates (example):**
 - 60-90g carbs/hr

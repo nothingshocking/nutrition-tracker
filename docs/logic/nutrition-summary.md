@@ -59,22 +59,22 @@ If Shortcut Result does not have any value
 ### Step 6-9: Extract Statistics
 ```
 Extract from dictionary:
-  - item_count â†’ Item Count
-  - total_calories â†’ Total Calories
-  - total_carbs â†’ Total Carbs
-  - unknown_count â†’ Unknown Count
+  - item_count ->' Item Count
+  - total_calories ->' Total Calories
+  - total_carbs ->' Total Carbs
+  - unknown_count ->' Unknown Count
 ```
 
 ### Step 10: Calculate Calories Per Hour
 ```
-Calculate: Total Calories Ã· Hours Back
+Calculate: Total Calories / Hours Back
 Round to: Ones Place
 Set Variable: Cal Per Hour
 ```
 
 ### Step 11: Calculate Carbs Per Hour
 ```
-Calculate: Total Carbs Ã· Hours Back
+Calculate: Total Carbs / Hours Back
 Round to: Ones Place
 Set Variable: Carbs Per Hour
 ```

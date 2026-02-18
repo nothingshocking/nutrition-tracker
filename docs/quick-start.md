@@ -17,7 +17,7 @@ Download from shortcuts/release/ folder:
 4. Nutrition Get Entries.shortcut
 5. Nutrition Calculate Stats.shortcut
 
-Tap each file â†’ "Add Shortcut"
+Tap each file ->' "Add Shortcut"
 
 ## 3. Verify Helper Names (1 minute)
 
@@ -26,16 +26,16 @@ CRITICAL STEP - Open Shortcuts app and check:
 - "Nutrition: Get Entries" (colon required)
 - "Nutrition: Calculate Stats" (colon required)
 
-If missing colon: Long press â†’ Rename â†’ add colon
+If missing colon: Long press ->' Rename ->' add colon
 
 ## 4. Set Up Voice (2 minutes)
 
 Log Nutrition:
-1. Long press â†’ Details â†’ Add to Siri
+1. Long press ->' Details ->' Add to Siri
 2. Record: "Log food"
 
 Nutrition Summary:
-1. Long press â†’ Details â†’ Add to Siri
+1. Long press ->' Details ->' Add to Siri
 2. Record: "Fuel check"
 
 ## 5. Test It (2 minutes)
@@ -53,7 +53,7 @@ You should see your test entry!
 Core commands:
 - LOG: "Hey Siri, log food"
 - CHECK: "Hey Siri, fuel check"
-- EDIT: Shortcuts app â†’ "Edit Recent Entry"
+- EDIT: Shortcuts app ->' "Edit Recent Entry"
 
 ## Common Issues
 

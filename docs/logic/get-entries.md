@@ -16,25 +16,25 @@
 
 ### Step 1: Receive Input
 ```
-Shortcut Input â†’ Hours Back
+Shortcut Input ->' Hours Back
 ```
 
 ### Step 2: Calculate Time Boundaries
 ```
-Current Date â†’ Now
-Adjust Date: Now - Hours Back hours â†’ Start Time
-Adjust Date: Now - 24 hours â†’ 24 Hours Ago
+Current Date ->' Now
+Adjust Date: Now - Hours Back hours ->' Start Time
+Adjust Date: Now - 24 hours ->' 24 Hours Ago
 ```
 
 ### Step 3: Initialize Collections
 ```
-List (empty) â†’ All Entries
-List (empty) â†’ Empty List (for defaults)
+List (empty) ->' All Entries
+List (empty) ->' Empty List (for defaults)
 ```
 
 ### Step 4: Query Today
 ```
-Format Date: Now â†’ yyyy_MM_dd
+Format Date: Now ->' yyyy_MM_dd
 Text: "nutrition_[date]"
 Get Value (Data Jar):
   If value does not exist: Empty List
@@ -48,7 +48,7 @@ If Value has any value
 ### Step 5: Query Yesterday
 ```
 Adjust Date: Now - 1 day
-Format Date â†’ yyyy_MM_dd
+Format Date ->' yyyy_MM_dd
 Text: "nutrition_[date]"
 Get Value (Data Jar):
   If value does not exist: Empty List
@@ -70,7 +70,7 @@ Set Variable: Entries List = All Entries
 
 ### Step 8: Initialize Filtered List
 ```
-List (empty) â†’ Filtered Entries
+List (empty) ->' Filtered Entries
 ```
 
 ### Step 9: Filter by Time Window
@@ -92,7 +92,7 @@ If Count > 0
 ```
 If Filtered Entries does not have any value
   THEN:
-    List (empty) â†’ Filtered Entries
+    List (empty) ->' Filtered Entries
 ```
 
 ### Step 11: Return Results

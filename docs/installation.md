@@ -66,12 +66,12 @@ The colons are REQUIRED. Without them the system will not work.
 
 For "Log Nutrition":
 1. Long press shortcut
-2. Details â†’ Add to Siri
+2. Details ->' Add to Siri
 3. Record: "Log food"
 
 For "Nutrition Summary":
 1. Long press shortcut
-2. Details â†’ Add to Siri
+2. Details ->' Add to Siri
 3. Record: "Fuel check"
 
 Tip: Choose phrases that are easy to say while active.
@@ -138,7 +138,7 @@ Solution: Normal - system creates key automatically
 - Test in quiet environment first
 
 ### Data Jar Permission Denied
-- Settings â†’ Privacy â†’ Data Jar
+- Settings ->' Privacy ->' Data Jar
 - Ensure Shortcuts has permission
 - Reinstall Data Jar if needed
 

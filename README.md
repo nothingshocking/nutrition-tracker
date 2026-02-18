@@ -1,4 +1,4 @@
-﻿# Nutrition Tracker for Endurance Sports
+# Nutrition Tracker for Endurance Sports
 
 A voice-activated nutrition tracking system built on iOS Shortcuts,
 designed for endurance athletes who need hands-free logging and
@@ -61,12 +61,12 @@ After importing, check these exact names in Shortcuts app:
 
 Note the colon after "Nutrition" - this is required.
 
-If missing, long press â†’ Rename â†’ add the colon.
+If missing, long press ->' Rename ->' add the colon.
 
 ### Set Up Siri
 
-- "Log food" â†’ Log Nutrition
-- "Fuel check" â†’ Nutrition Summary
+- "Log food" ->' Log Nutrition
+- "Fuel check" ->' Nutrition Summary
 
 See [docs/installation.md](docs/installation.md) for full details.
 
@@ -107,18 +107,18 @@ Items without data: 1
 ## Repository Structure
 ```
 nutrition-tracker/
-â”œâ”€â”€ shortcuts/
-â”‚   â”œâ”€â”€ latest/     <- Development files (hyphenated names)
-â”‚   â””â”€â”€ release/    <- Import-ready files (correct iOS names)
-â”œâ”€â”€ docs/
-â”‚   â”œâ”€â”€ quick-start.md
-â”‚   â”œâ”€â”€ user-guide.md
-â”‚   â”œâ”€â”€ installation.md
-â”‚   â”œâ”€â”€ architecture.md
-â”‚   â””â”€â”€ logic/      <- Pseudocode for each shortcut
-â””â”€â”€ tests/
-    â”œâ”€â”€ test-plan.md
-    â””â”€â”€ field-test-template.md
+|-- shortcuts/
+|   |-- latest/     <- Development files (hyphenated names)
+|   -- release/    <- Import-ready files (correct iOS names)
+|-- docs/
+|   |-- quick-start.md
+|   |-- user-guide.md
+|   |-- installation.md
+|   |-- architecture.md
+|   -- logic/      <- Pseudocode for each shortcut
+-- tests/
+    |-- test-plan.md
+    -- field-test-template.md
 ```
 
 ## Documentation

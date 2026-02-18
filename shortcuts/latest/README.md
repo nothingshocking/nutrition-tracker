@@ -23,12 +23,12 @@ which have the correct iOS shortcut names.
 
 When you update shortcuts and need to save new versions:
 
-1. Export from iPhone via Share â†’ Save to Files
+1. Export from iPhone via Share ->' Save to Files
 2. Save to this folder (latest/)
 3. Also copy to release/ with correct names:
-   - log-nutrition.shortcut â†’ Log Nutrition.shortcut
-   - nutrition-summary.shortcut â†’ Nutrition Summary.shortcut
-   - edit-recent-entry.shortcut â†’ Edit Recent Entry.shortcut
-   - get-entries.shortcut â†’ Nutrition Get Entries.shortcut
-   - calculate-stats.shortcut â†’ Nutrition Calculate Stats.shortcut
+   - log-nutrition.shortcut ->' Log Nutrition.shortcut
+   - nutrition-summary.shortcut ->' Nutrition Summary.shortcut
+   - edit-recent-entry.shortcut ->' Edit Recent Entry.shortcut
+   - get-entries.shortcut ->' Nutrition Get Entries.shortcut
+   - calculate-stats.shortcut ->' Nutrition Calculate Stats.shortcut
 4. Commit both folders to Git
