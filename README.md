@@ -156,6 +156,6 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## Version
 
-**Version:** 1.0.0  
-**Last Updated:** February 16, 2026  
+**Version:** 1.0.1  
+**Last Updated:** February 18, 2026  
 **Compatibility:** iOS 26.0+

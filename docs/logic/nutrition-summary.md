@@ -72,6 +72,11 @@ Round to: Ones Place
 Set Variable: Cal Per Hour
 ```
 
+**Note:** Earlier versions (v1.0.0) incorrectly used + (addition) instead of ÷ (division), 
+resulting in Cal Per Hour showing as Total Calories + Hours Back instead of the proper rate.
+This was fixed in v1.0.1.
+
+
 ### Step 11: Calculate Carbs Per Hour
 ```
 Calculate: Total Carbs / Hours Back

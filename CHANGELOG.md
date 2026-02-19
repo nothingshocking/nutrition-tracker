@@ -13,6 +13,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automated backup to iCloud Drive
 - Session-based filtering and views
 
+## [1.0.1] - 2026-02-18
+
+### Fixed
+- Fixed "now" voice recognition issue by combining timing choice with confirmation menu
+  - Changed from two-step flow (timing → confirm) to single menu (Log Now / Log Earlier / Cancel)
+  - Eliminates problematic voice recognition of the word "now"
+  - Reduces interaction steps by one
+- Fixed calories per hour calculation in Nutrition Summary
+  - Was adding Hours Back instead of dividing (+ instead of ÷)
+  - Carbs per hour calculation was correct
+
+### Changed
+- Log Nutrition: Combined "When did you consume this?" choice with "Log It / Cancel" confirmation
+- Improved voice command reliability by avoiding ambiguous "now" keyword
+
 ## [1.0.0] - 2026-02-16
 
 ### Added

@@ -43,51 +43,76 @@ ACTION: Ask for Input
 OUTPUT: Carbs (Number variable)
 ```
 
-### Step 4: Determine Entry Time
+### Step 4: Show Confirmation Menu with Timing Choice
 ```
+ACTION: Current Date
+OUTPUT: Current Date
+
+ACTION: Format Date
+  Date: Current Date
+  Format: Custom "HH:mm"
+OUTPUT: Formatted Date
+
+ACTION: Text
+  Content: 
+    "Item: " + Item + "\n"
+    "Calories: " + Calories + "\n"
+    "Carbs: " + Carbs + "g\n"
+    "Time: " + Formatted Date
+OUTPUT: Confirmation Text
+
 ACTION: Choose from Menu
-  Prompt: "When did you consume this?"
-  Options: "Just now" / "Earlier"
-
-OPTION 1: "Just now"
-  Current Date ->' Entry Time
-
-OPTION 2: "Earlier"
-  Ask for Input: Minutes ago
-  Current Date - Minutes ->' Entry Time
+  Prompt: Confirmation Text + "\nLog Now, Log Earlier, or Cancel?"
+  Options:
+    - "Log Now"
+    - "Log Earlier"
+    - "Cancel"
 ```
 
-### Step 5: Generate Session ID
+### OPTION 1: "Log Now"
 ```
-Format Date: Entry Time ->' yyyyMMdd_HHmm
-Text: "session_" + Formatted Date
-Set Variable: Session ID
+ACTION: Current Date
+OUTPUT: Current Date
+
+ACTION: Set Variable
+  Name: Entry Time
+  Value: Current Date
+
+[Continue with Session ID generation, save logic...]
 ```
 
-### Step 6: Generate Data Key
+### OPTION 2: "Log Earlier"
 ```
-Format Date: Entry Time ->' yyyy_MM_dd
-Text: "nutrition_" + Formatted Date
-Set Variable: Data Key
+ACTION: Ask for Input
+  Type: Number
+  Prompt: "How many minutes ago?"
+  Default: 15
+
+ACTION: Current Date
+OUTPUT: Current Date
+
+ACTION: Adjust Date
+  Operation: Subtract
+  Amount: Provided Input
+  Units: minutes
+OUTPUT: Adjusted Date
+
+ACTION: Set Variable
+  Name: Entry Time
+  Value: Adjusted Date
+
+[Continue with Session ID generation, save logic...]
 ```
 
-### Step 7: Format Display Time
+### OPTION 3: "Cancel"
 ```
-Format Date: Entry Time ->' HH:mm
+ACTION: Show Notification
+  Text: "Entry cancelled"
+
+ACTION: Stop Shortcut
 ```
 
-### Step 8: Build Confirmation Text
-```
-Text: "Time: [time]\nItem: [item]\nCalories: [cal]\nCarbs: [carbs]g"
-```
-
-### Step 9: Show Confirmation Menu
-```
-Choose from Menu: "Confirm this entry?"
-  Options: "Log It" / "Cancel"
-```
-
-### Step 10: Log It - Get Existing Entries
+### Step 5: Get Existing Entries
 ```
 Get Value (Data Jar): Data Key
   If value does not exist: Empty List
@@ -97,7 +122,7 @@ If Value does not have any value
   OTHERWISE: Value ->' Existing Entries
 ```
 
-### Step 11: Create Entry Dictionary
+### Step 6: Create Entry Dictionary
 ```
 Dictionary:
   - timestamp: Entry Time
@@ -107,12 +132,12 @@ Dictionary:
   - session_id: Session ID
 ```
 
-### Step 12: Add Entry to List
+### Step 7: Add Entry to List
 ```
 Add to Variable: Existing Entries = Dictionary
 ```
 
-### Step 13: Save to Data Jar
+### Step 8: Save to Data Jar
 ```
 Set Value (Data Jar):
   Key Path: Data Key
@@ -120,12 +145,12 @@ Set Value (Data Jar):
   Allow Overwriting: Yes
 ```
 
-### Step 14: Show Success Notification
+### Step 9: Show Success Notification
 ```
 Show Notification: "Logged: [Item] at [time]"
 ```
 
-### Step 15: Cancel Option
+### Step 10: Cancel Option
 ```
 Show Notification: "Entry cancelled"
 ```
