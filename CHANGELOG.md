@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Under Consideration
+- Enhanced edit function with two modes:
+  - Fix incomplete items (current behavior)
+  - Edit any recent item (new capability)
+- See docs/features/enhanced-edit-function.md for details
+
 ### Planned
 - Quick Log menu for common items
 - CSV export functionality

@@ -1,0 +1,195 @@
+# Enhanced Edit Function
+
+**Status:** Proposed  
+**Priority:** Medium  
+**Complexity:** Low-Medium  
+**Version:** Planned for v1.1 or v1.2
+
+---
+
+## Current Behavior
+
+The "Edit Recent Entry" shortcut:
+- Queries last 72 hours of entries
+- Filters to show ONLY incomplete entries (calories=0 OR carbs=0)
+- User selects from filtered list
+- Updates calories and carbs values
+
+**Limitation:** Cannot edit complete entries or fix mistakes in correct data
+
+---
+
+## Proposed Enhancement
+
+### Option A: Two-Mode Edit (Recommended)
+
+Add initial menu with two paths:
+
+**Menu prompt:** "What would you like to edit?"
+
+1. **"Fix incomplete items"** (current behavior)
+   - Shows only entries with missing data
+   - Quick access to common use case
+
+2. **"Edit any recent item"** (new)
+   - Shows ALL entries from last X hours
+   - User can select any entry
+   - Can modify: item name, calories, carbs, timestamp
+
+**Benefits:**
+- Maintains fast path for incomplete items
+- Adds flexibility for corrections
+- Clear user choice
+
+---
+
+### Option B: Always Show All Items
+
+Remove filtering entirely:
+- Always show all recent entries
+- Highlight incomplete ones in menu display
+- User selects any to edit
+
+**Benefits:**
+- Simpler flow (one less menu)
+- More flexible
+
+**Drawbacks:**
+- Longer menu if many entries
+- Incomplete items less obvious
+
+---
+
+## Implementation Details
+
+### Option A Flow
+```
+1. Choose from Menu: "What would you like to edit?"
+   
+   Option 1: "Fix incomplete items"
+     → Current logic (filter incomplete)
+     → Show filtered menu
+     → Update calories and carbs only
+   
+   Option 2: "Edit any recent item"
+     → Query last X hours (user specifies? default 6?)
+     → Show ALL entries
+     → User selects
+     → Menu: "What to change?"
+       - Update calories/carbs
+       - Update item name
+       - Update timestamp
+       - Delete entry (future)
+```
+
+### Data Changes
+
+**What can be edited:**
+- Item name (Text)
+- Calories (Number)
+- Carbs (Number)
+- Timestamp (Date) - for backdating corrections
+
+**What should NOT be edited:**
+- Session ID (preserve original session grouping)
+
+---
+
+## User Experience Considerations
+
+**Voice vs Manual:**
+- This feature likely used POST-activity (manual)
+- Not voice-activated mid-ride
+- Can be more complex/detailed
+
+**Time Window:**
+- Current: Fixed 72 hours
+- Proposed: User-specified hours? (default 6, max 72)
+- Or: Keep 72 hours, just show all entries
+
+**Menu Display:**
+- Current: "Gel at 14:30 (0cal, 0g)"
+- Proposed: "Gel at 14:30 (100cal, 25g)" ← shows complete values too
+- Highlight incomplete: "⚠ Gel at 14:30 (0cal, 0g)"
+
+---
+
+## Technical Complexity
+
+**Low-Medium because:**
+- Core query logic exists
+- Just removes filter OR adds menu layer
+- Update logic can expand to more fields
+
+**Considerations:**
+- More complex if allowing timestamp edits
+- Need to handle entry removal/replacement correctly
+- Validation on new values
+
+---
+
+## Alternative: Post-Ride Data Management
+
+**Instead of expanding Edit function, create separate tool:**
+
+**"Manage Today's Nutrition"** shortcut:
+- Shows all entries for today
+- Full CRUD operations:
+  - Create new entry (backdated)
+  - Read/view all entries
+  - Update any field
+  - Delete entries
+- More comprehensive post-ride management
+- Keeps Edit function simple
+
+**Benefits:**
+- Separation of concerns
+- Edit = quick fixes
+- Manage = comprehensive review
+- Could add export, statistics, validation
+
+---
+
+## Related Features
+
+This connects to:
+- **CSV Export** - Need to export for external analysis
+- **Data Visualization** - View entries in chart/graph
+- **Validation** - Flag suspicious values (e.g., 5000 cal entry)
+- **Session Management** - View/edit by session instead of time
+
+---
+
+## Recommendation
+
+**Phase 1 (v1.1):** Option A - Add two-mode edit
+- Quick path for incomplete (current behavior)
+- Flexible path for any edit
+- Keeps voice use case simple
+
+**Phase 2 (v1.2+):** Separate "Manage Nutrition" tool
+- Comprehensive post-ride management
+- Full CRUD capabilities
+- Data export and visualization
+
+**Rationale:** 
+Iterative approach validates need before building comprehensive tool.
+Field testing will reveal whether simple enhancement suffices or if
+full management interface is needed.
+
+---
+
+## Open Questions
+
+1. What % of edits are incomplete vs corrections?
+2. Most common corrections: values, names, or timestamps?
+3. How often used during vs after activity?
+4. Would users prefer simple enhancement or separate tool?
+
+**Action:** Collect data during field testing to inform decision.
+
+---
+
+**Status:** Awaiting field test feedback  
+**Next Step:** Review after 10+ real uses  
+**Decision Point:** Does current edit function handle 80%+ of needs?

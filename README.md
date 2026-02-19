@@ -137,9 +137,10 @@ nutrition-tracker/
 - Performance optimization
 
 **v1.1** (Planned)
-- Quick Log menu
-- CSV export
-- Automated backup
+- Quick Log menu for common items
+- CSV export for analysis
+- Automated backup to iCloud Drive
+- Enhanced edit function: Edit any recent entry (not just incomplete)
 
 **v2.0** (Future)
 - Apple Watch support
